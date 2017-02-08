@@ -58,7 +58,7 @@ class EVs_UIModule : public Adafruit_ILI9340
     /**  Constructor for UI Module, 
     this constructor takes input as three SPI pin assignments.
     */
-    EVs_UIModule(uint8_t a, uint8_t b, uint8_t c);
+    EVs_UIModule(uint8_t CS, uint8_t RS, uint8_t RST);
 
   /** initialize the library interface, its default values and performs hardware setup required for operation.
   */

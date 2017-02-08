@@ -23,7 +23,7 @@
 #include "EVs_UIModule.h"
 
 
-EVs_UIModule::EVs_UIModule(uint8_t a, uint8_t b, uint8_t c):Adafruit_ILI9340(a,b,c)
+EVs_UIModule::EVs_UIModule(uint8_t CS, uint8_t RS, uint8_t RST):Adafruit_ILI9340(CS, RS, RST)
 {
 }
 
