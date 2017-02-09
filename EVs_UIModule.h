@@ -42,11 +42,19 @@
 #define EVs_UIM_YELLOW  0xFFE0  
 #define EVs_UIM_WHITE   0xFFFF
 
+#if defined(ESP8266)
+#define EVs_BTN_LEFT -1
+#define EVs_BTN_RIGHT -1
+#define EVs_BTN_UP -1
+#define EVs_BTN_DOWN -1
+#define EVs_BTN_CLICK  -1
+#else
 #define EVs_BTN_LEFT A3
 #define EVs_BTN_RIGHT A0
 #define EVs_BTN_UP A1
 #define EVs_BTN_DOWN A2
 #define EVs_BTN_CLICK  2
+#endif
 
 
 /**

@@ -52,7 +52,11 @@ void EVs_UIModule::begin()
 
 bool EVs_UIModule::getButtonState(uint8_t btn)
 {
+    #if defined(ESP8266)
+    return false;
+    #else
     return (!digitalRead(btn));
+    #endif
 }
 
 void EVs_UIModule::waitForButtonPress(uint8_t btn)
