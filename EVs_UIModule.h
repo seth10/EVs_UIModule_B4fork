@@ -56,6 +56,15 @@
 #define EVs_BTN_CLICK  2
 #endif
 
+#if defined(ESP8266)
+#define _cs D1
+#define _dc D4
+#define _rst 255
+#else
+#define _cs 7
+#define _dc 8
+#define _rst 9
+#endif
 
 /**
   @brief This class defines methods for the UIModule for EVShield
@@ -66,7 +75,7 @@ class EVs_UIModule : public Adafruit_ILI9340
     /**  Constructor for UI Module, 
     this constructor takes input as three SPI pin assignments.
     */
-    EVs_UIModule(uint8_t CS = 7, uint8_t RS = 8, uint8_t RST = 9);
+    EVs_UIModule(uint8_t CS = _cs, uint8_t RS = _dc, uint8_t RST = _rst);
 
   /** initialize the library interface, its default values and performs hardware setup required for operation.
   */
