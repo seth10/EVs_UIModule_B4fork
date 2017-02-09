@@ -40,7 +40,11 @@ void EVs_UIModule::clearScreen()
 void EVs_UIModule::begin()
 {
     Adafruit_ILI9340::begin();
+    #if defined(ESP8266)
+    setRotation(3);
+    #else
     setRotation(1);
+    #endif
     setTextSize(2);
     setTextColor(EVs_UIM_WHITE);
     pinMode(EVs_BTN_LEFT, INPUT);
