@@ -67,7 +67,7 @@ void EVs_UIModule::clearLine(uint8_t lineNo)
     Adafruit_ILI9340::fillRect(0,y,320,16,EVs_UIM_BLACK);
 }
 
-void EVs_UIModule::writeLine(uint16_t x, uint8_t lineNo, char *outText, bool clearLine, uint16_t color)
+void EVs_UIModule::writeLine(uint16_t x, uint8_t lineNo, const char *outText, bool clearLine, uint16_t color)
 {
     if(clearLine==true){
         EVs_UIModule::clearLine(lineNo);

@@ -120,7 +120,7 @@ class EVs_UIModule : public Adafruit_ILI9340
             EVs_UIM_YELLOW <br>
             EVs_UIM_WHITE
   */
-  void writeLine(uint16_t x, uint8_t lineNo, char *outText, bool clearLine, uint16_t color);
+  void writeLine(uint16_t x, uint8_t lineNo, const char *outText, bool clearLine, uint16_t color);
 
 };
 
