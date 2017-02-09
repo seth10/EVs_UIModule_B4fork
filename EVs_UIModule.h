@@ -59,7 +59,7 @@
 #if defined(ESP8266)
 #define _cs D1
 #define _dc D4
-#define _rst 255
+#define _rst -1
 #else
 #define _cs 7
 #define _dc 8

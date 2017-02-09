@@ -47,16 +47,19 @@ void EVs_UIModule::begin()
     #endif
     setTextSize(2);
     setTextColor(EVs_UIM_WHITE);
+    #if !defined(ESP8266)
     pinMode(EVs_BTN_LEFT, INPUT);
     pinMode(EVs_BTN_RIGHT, INPUT);
     pinMode(EVs_BTN_UP, INPUT);
     pinMode(EVs_BTN_DOWN, INPUT);
     pinMode(EVs_BTN_CLICK, INPUT);
+    #endif
 }
 
 bool EVs_UIModule::getButtonState(uint8_t btn)
 {
     #if defined(ESP8266)
+    #warning from EVs_UIModule: bool getButtonState(uint8_t btn) is not supported
     return false;
     #else
     return (!digitalRead(btn));
@@ -65,8 +68,13 @@ bool EVs_UIModule::getButtonState(uint8_t btn)
 
 void EVs_UIModule::waitForButtonPress(uint8_t btn)
 {
+    #if defined(ESP8266)
+    #warning from EVs_UIModule: void waitForButtonPress(uint8_t btn) is not supported
+    return;
+    #else
     while (digitalRead(btn))
         ;
+    #endif
 }
 
 void EVs_UIModule::clearLine(uint8_t lineNo)
