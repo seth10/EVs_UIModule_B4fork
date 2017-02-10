@@ -32,7 +32,6 @@
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_ILI9340.h>
-#include <Wire.h>
 
 #define EVs_UIM_BLACK   0x0000
 #define EVs_UIM_BLUE    0x001F
@@ -72,14 +71,15 @@
   */
 class EVs_UIModule : public Adafruit_ILI9340
 {
-public:
-  /**  Constructor for UI Module, this constructor takes input as three SPI pin assignments.
-  */
-  EVs_UIModule(uint8_t CS = _cs, uint8_t RS = _dc, uint8_t RST = _rst);
+  public:
+    /**  Constructor for UI Module, 
+    this constructor takes input as three SPI pin assignments.
+    */
+    EVs_UIModule(uint8_t CS = _cs, uint8_t RS = _dc, uint8_t RST = _rst);
 
   /** initialize the library interface, its default values and performs hardware setup required for operation.
   */
-  void begin();
+    void begin();
 
   /** Set the rotation (orientation) of the screen 
     @param r orientation value: <br>
@@ -138,36 +138,6 @@ public:
             EVs_UIM_WHITE
   */
   void writeLine(uint16_t x, uint8_t lineNo, const char *outText, bool clearLine, uint16_t color);
-  
-  /** read the touchscreen press and write the coordinates to the output parameters
-    @param[out] x x-value of touchscreen press is written to this variable
-    @param[out] y y-value of touchscreen press is written to this variable
-  */
-  void getTouchscreenValues(uint16_t *x, uint16_t *y);
-  
-  /** reads the x-coordinate of the touchscreen press */
-  uint16_t TS_X();
-  
-  /** reads the y-coordinate of the touchscreen press */
-  uint16_t TS_Y();
-  
-  /** detect touchscreen presses and prevents false positives */
-  bool isTouched();
-  
-  bool checkButton(uint16_t x, uint16_t y, uint16_t width, uint16_t height);
-  
-  /** returns 0 if none of the software buttons are touched, or 1-4 if one is. */
-  uint8_t getFunctionButton();
-
-public:
-  /** touchscreen calibration values */
-  uint16_t ts_cal[8];
-  
-  /** get raw touchscreen values, do some math using the calibration values, and write to the output parameters
-    @param[out] x x-value of touchscreen press is written to this variable
-    @param[out] y y-value of touchscreen press is written to this variable
-  */
-  void getReading(uint16_t *x, uint16_t *y);
 
 };
 
