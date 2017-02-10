@@ -56,10 +56,13 @@ void EVs_UIModule::begin()
     #endif
 }
 
+#if defined(ESP8266)
+  #warning from EVs_UIModule: `bool getButtonState(uint8_t btn)` and `void waitForButtonPress(uint8_t btn)` are not supported on the ESP8266
+#endif
+
 bool EVs_UIModule::getButtonState(uint8_t btn)
 {
     #if defined(ESP8266)
-    #warning from EVs_UIModule: bool getButtonState(uint8_t btn) is not supported
     return false;
     #else
     return (!digitalRead(btn));
@@ -69,7 +72,6 @@ bool EVs_UIModule::getButtonState(uint8_t btn)
 void EVs_UIModule::waitForButtonPress(uint8_t btn)
 {
     #if defined(ESP8266)
-    #warning from EVs_UIModule: void waitForButtonPress(uint8_t btn) is not supported
     return;
     #else
     while (digitalRead(btn))
