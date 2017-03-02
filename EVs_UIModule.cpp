@@ -47,6 +47,7 @@ void EVs_UIModule::begin()
     #endif
     setTextSize(2);
     setTextColor(EVs_UIM_WHITE);
+    setCursor(0, 0);
     #if !defined(ESP8266)
     pinMode(EVs_BTN_LEFT, INPUT);
     pinMode(EVs_BTN_RIGHT, INPUT);
