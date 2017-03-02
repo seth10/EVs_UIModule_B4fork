@@ -8,6 +8,12 @@
 */
 
 /*
+ * History:
+ * Date      Author          Comments
+ * Feb 2017  Seth Tenembaum  updated pin definitions for PiStorms
+*/
+
+/*
  * Copyright (C) 2015 OpenElectrons.com
  *
  * This file is part of EVShield interface library.
