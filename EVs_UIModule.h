@@ -48,7 +48,7 @@
 #define EVs_UIM_YELLOW  0xFFE0  
 #define EVs_UIM_WHITE   0xFFFF
 
-#if defined(ESP8266)
+#if defined(ESP8266) || defined(AVR_NANO)
 #define EVs_BTN_LEFT -1
 #define EVs_BTN_RIGHT -1
 #define EVs_BTN_UP -1
@@ -62,7 +62,7 @@
 #define EVs_BTN_CLICK  2
 #endif
 
-#if defined(ESP8266)
+#if defined(ESP8266) || defined(AVR_NANO)
 #define _cs D1
 #define _dc D4
 #define _rst -1
