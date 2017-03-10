@@ -4,7 +4,7 @@
  \section intro_sec Introduction
  This library provides interface implementaiton to use EVShield UIModule<br>
  For more information about the UIModule, please visit:<br>
- http://www.openelectrons.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=99
+ http://www.mindsensors.com/arduino/8-ui-module-for-evshield-or-arduino
 */
 
 /*
@@ -14,7 +14,7 @@
 */
 
 /*
- * Copyright (C) 2015 OpenElectrons.com
+ * Copyright (C) 2017 OpenElectrons.com
  *
  * This file is part of EVShield interface library.
  * This library is free software; you can redistribute it and/or
