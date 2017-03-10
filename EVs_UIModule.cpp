@@ -103,3 +103,48 @@ void EVs_UIModule::writeLine(uint16_t x, uint8_t lineNo, const char *outText, bo
     println(outText);
     
 }
+
+
+void EVs_UIModule::coordsTouchscreenToDisplay(uint16_t *x, uint16_t *y) {
+    uint16_t oldX = *x;
+    switch (getRotation()) {
+        case 0:
+            *x = ILI9340_TFTWIDTH - *y;
+            *y = ILI9340_TFTHEIGHT - oldX;
+            break;
+        case 1:
+            *x = ILI9340_TFTHEIGHT - *x;
+            *y = *y;
+            break;
+        case 2:
+            *x = *y;
+            *y = oldX;
+            break;
+        case 3:
+            *x = *x;
+            *y = ILI9340_TFTWIDTH - *y;
+            break;
+    }
+}
+
+void EVs_UIModule::coordsDisplayToTouchscreen(uint16_t *x, uint16_t *y) {
+    uint16_t oldX = *x;
+    switch (getRotation()) {
+        case 0: // untested
+            *x = ILI9340_TFTWIDTH - *y;
+            *y = ILI9340_TFTHEIGHT - oldX;
+            break;
+        case 1: // untested
+            *x = ILI9340_TFTHEIGHT - *x;
+            *y = *y;
+            break;
+        case 2: // untested
+            *x = *y;
+            *y = oldX;
+            break;
+        case 3:
+            *x = *x;
+            *y = ILI9340_TFTWIDTH - *y;
+            break;
+    }
+}
