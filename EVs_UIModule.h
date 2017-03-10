@@ -99,7 +99,8 @@ class EVs_UIModule : public Adafruit_ILI9340
   void clearScreen();
 
   /**
-  Get the button state of the specific button on UI Module
+  Get the button state of the specific button on UI Module<br>
+  Not avaliable on the Wi-Fi Arduino Interface for PiStorms.
   @param btn      Button to get state for following: <br>
             EVs_BTN_LEFT <br>
             EVs_BTN_RIGHT <br>
@@ -111,7 +112,8 @@ class EVs_UIModule : public Adafruit_ILI9340
   bool getButtonState(uint8_t btn);
 
   /** 
-  Wait inside function until specified button is pressed on UIModule
+  Wait inside function until specified button is pressed on UIModule<br>
+  Not avaliable on the Wi-Fi Arduino Interface for PiStorms.
   @param btn      Button to get state for: <br>
             EVs_BTN_LEFT <br>
             EVs_BTN_RIGHT <br>
