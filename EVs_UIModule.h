@@ -48,7 +48,7 @@
 #define EVs_UIM_YELLOW  0xFFE0  
 #define EVs_UIM_WHITE   0xFFFF
 
-#if defined(ESP8266) || defined(AVR_NANO)
+#if defined(ESP8266) || defined(ARDUINO_AVR_NANO)
 #define EVs_BTN_LEFT -1
 #define EVs_BTN_RIGHT -1
 #define EVs_BTN_UP -1
@@ -62,9 +62,13 @@
 #define EVs_BTN_CLICK  2
 #endif
 
-#if defined(ESP8266) || defined(AVR_NANO)
-#define _cs D1
-#define _dc D4
+#if defined(ESP8266)
+#define _cs D1 /* TX0 */
+#define _dc D4 /* SDA */
+#define _rst -1
+#elif defined(ARDUINO_AVR_NANO)
+#define _cs 1 /* TXD */
+#define _dc 18 /* SDA */ /* should be synonymous with A4 */
 #define _rst -1
 #else
 #define _cs 7
