@@ -14,7 +14,7 @@
 */
 
 /*
- * Copyright (C) 2017 OpenElectrons.com
+ * Copyright (C) 2017 mindsensors.com
  *
  * This file is part of EVShield interface library.
  * This library is free software; you can redistribute it and/or
